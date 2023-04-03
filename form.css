@@ -73,6 +73,7 @@ body{
     }
     #container{
         margin-left: 30px;
+        box-sizing: border-box;
     }
     .form-group{
         width:100%;
