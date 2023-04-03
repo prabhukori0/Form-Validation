@@ -1,0 +1,93 @@
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.form-group{
+    text-align: center;
+}
+.form-contant{
+    padding: 8px;
+}
+.form{
+    color: rgb(240, 30, 184); 
+    font-weight: bolder;
+    margin-right: 300px;
+}
+.form2{
+    color: rgb(240, 30, 184); 
+    font-weight: bolder;
+    margin-right: 338px;
+}
+.form3{
+    color: rgb(240, 30, 184); 
+    font-weight: bolder;
+    margin-right: 305px;
+}
+.form4{
+    color: rgb(240, 30, 184); 
+    font-weight: bolder;
+    margin-right: 238px;
+}
+.form5{
+    color: rgb(240, 30, 184); 
+    font-weight: bolder;
+    margin-right: 258px;
+}
+.butt{
+    text-align: center;
+}
+.fontsiz{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.responsiv{
+    /* padding-left: 440px; */
+    align-items: center;
+}
+.btn{
+    text-align: center;
+}
+.wait{
+    background-color: green;
+}
+.errorColor {
+    color: red;
+}
+.errorColors {
+    color: red;
+    text-align: right;
+}
+.successUserColor{
+    color: green;
+    border-style: dotted;
+}
+
+@media screen and (max-width: 575px) {
+    body{
+        width: 70%;
+    }
+    .form-group{
+        width:100%;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .fontsiz{
+        width: 70%;
+    }
+    .responsiv{
+        width: 70%;
+    }
+    .btn{
+        width: 100%;
+        margin-left: 50px;
+    }
+    .form-contant{
+        margin-right: 50px;
+    }
+    h1{
+        width: 100%;
+        margin-left: 50px;
+        padding-left: 50px;
+    }
+}

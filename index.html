@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body id="wait" style="background-color: #7fffd4">
+    <h1 style="text-align: center; color: darkorange;">This is Form Validation Practice</h1>
+    <div>
+      <form id="container"onsubmit="return Validation()"class="form-group">
+        <div style="margin-bottom: 20px" class="responsiv">
+          <label for="username" class="form">Username</label><br />
+          <input
+            id="username" size="50%"class="form-contant" name="username"
+            autocomplete="on" placeholder="Username"
+          /><br />
+          <spam id="erreruser" class="fontsiz" ;></spam>
+        </div>
+        <div style="margin-bottom: 20px" class="responsiv">
+          <label for="email" class="form2">Email</label><br />
+          <input
+            id="email" size="50%" class="form-contant"name="email"autocomplete="on"placeholder="Email"
+          /><br />
+          <spam id="erreremail" class="fontsiz" ;></spam>
+        </div>
+        <div style="margin-bottom: 20px" class="responsiv">
+          <label for="password" class="form3">Password</label><br />
+          <input
+            id="password"style="padding: 8px"size="50%"class="form-contant"  name="password" autocomplete="on"placeholder="Password"
+          /><br />
+          <spam id="errerpass" class="fontsiz" ;></spam>
+        </div>
+        <div style="margin-bottom: 20px" class="responsiv">
+          <label for="conpassword" class="form4">Confirm Password</label><br />
+          <input
+            id="conpassword"style="padding: 8px"size="50%"class="form-contant" name="conpassword"autocomplete="on" placeholder="Confirm Password"
+          /><br />
+          <spam id="errerconpass" class="fontsiz" ;></spam>
+        </div>
+        <div style="margin-bottom: 20px" class="responsiv">
+          <label for="mobilenumber" class="form5">Mobile Number</label><br />
+          <input
+            id="mobilenumber"style="padding: 8px" size="50%"class="form-contant" name="mobilenumber"autocomplete="on" placeholder="Mobile Number"
+          /><br />
+          <spam id="errermobile" class="fontsiz" ></spam>
+        </div>
+        <input
+          style="
+            background-color: red;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 8px;
+            font-size: 20px;
+            color: #FFFFFF;
+            padding: 5px 100px;
+          "
+          class="btn"  name="submit"autocomplete="on" type="submit"
+        /><br />
+      </form>
+    </div>
+
+    <script>
+      let val = 1; 
+      const errorPas = document.getElementById("erreruser");
+      const errorPass = document.getElementById("erreremail");
+      const errorPasss = document.getElementById("errerpass");
+      const errorPassss = document.getElementById("errerconpass");
+      const errorPasssss = document.getElementById("errermobile");
+      
+      // userName.addEventListener("focus", function () {
+        
+      // });
+
+      function Validation() {    
+        const spacer = /\s/g;
+        const userName = document.getElementById("username").value;
+        const userNames = userName.spacer;
+        const emailName = document.getElementById("email").value;
+        const passName = document.getElementById("password").value;
+        const conpassName = document.getElementById("conpassword").value;
+        const mobileName = document.getElementById("mobilenumber").value;
+
+        // Condition only UserName
+        if (userName == "") {
+          errorPas.innerText = "Input The Username";
+          errorPas.classList.add("errorColor");
+          errorPas.classList.remove("successUserColor");         
+          // val = 0;
+          return false;
+        }  
+        
+        if (userName.length <= 3 || userName.length > 15) {
+          errorPas.innerText =
+            "Type is Minimum 3 and Maximum 15 Charecter";
+            errorPas.classList.remove("successUserColor");
+          errorPas.classList.add("errorColor");
+            // val = 0;
+            return false;
+        }        
+        if (spacer.test(userName)) {
+          errorPas.innerText ="Not Space used";
+          errorPas.classList.remove("successUserColor");
+          errorPas.classList.add("errorColor");
+          // val = 0;
+            return false;
+        }        
+        if (!isNaN(userName)) {
+          errorPas.innerText =
+            "All Numerical Number Not Allow";
+            errorPas.classList.remove("successUserColor");
+          errorPas.classList.add("errorColor");
+            // val = 0;
+            return false;
+        }
+        if (userName) {
+          errorPas.innerText = "Username Successfull"
+          errorPas.classList.add("successUserColor");
+            // val = 0;
+            // return true;
+          }
+                
+        // Condition only Email ID
+          if (emailName == "") {
+            errorPass.innerText ="Input The Email ID";
+            errorPass.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if (/\s/g.test(emailName)) {
+            errorPass.innerText ="Not Space used";
+            errorPass.classList.add("errorColor");
+              return false;
+          } 
+          if ((emailName.charAt(emailName.length - 4) != ".") && (emailName.charAt(emailName.length - 3) != ".")) {
+            errorPass.innerText = "Not Complete Email ID";
+            errorPass.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if (emailName.indexOf("@") <= 3) {
+            errorPass.innerText =
+              "@ can be used after three characters";
+              errorPass.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if(!isNaN(emailName)) {
+            errorPass.innerText =
+              "Numbers is Not Allow";
+              errorPass.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }         
+          if (emailName) {
+          errorPass.innerText = "Email ID Successfull"
+          errorPass.classList.add("successUserColor");
+            // val = 0;
+            // return true;
+          }
+
+          // Condition only Password
+          if (passName == "") {
+            errorPasss.innerText = "Input The Password";
+            errorPasss.classList.add("errorColor");
+            // val = 0;
+            return false;
+          }
+          if (!isNaN(passName)) {
+            errorPasss.innerText =
+              "Numbers is Not Allow";
+              errorPasss.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if(/\s/g.test(passName)) {
+            errorPasss.innerText ="Not Space used";
+            errorPasss.classList.add("errorColor");
+              return false;
+          } 
+          if (passName.length <= 5 || passName >= 20) {
+            errorPasss.innerText =
+              "Password allow is add minimum 6 digit and maximum 20 character ";
+              errorPasss.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if (passName) {
+          errorPasss.innerText = "Password Successfull"
+          errorPasss.classList.add("successUserColor");
+            // val = 0;
+            // return true;
+          }
+          
+
+          // Condition only Confirm Password
+          if (conpassName == "") {
+            errorPassss.innerText =
+              "Input The Confirm Password";
+              errorPassss.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if(conpassName != passName) {
+            errorPassss.innerText =
+              "Not Match Correct Confirm Password";
+              errorPassss.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          
+          if(/\s/g.test(conpassName)) {
+              errorPassss.innerText =
+              "Not Match Correct Confirm Password";
+              errorPassss.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if (conpassName) {
+          errorPassss.innerText = "Confirm Password Successfull"
+          errorPassss.classList.add("successUserColor");
+            // val = 0;
+            // return true;
+          }
+
+          // Condition only Mobile Number
+          if (isNaN(mobileName)) {
+            errorPasssss.innerText =
+              "Input The Mobile Number";
+              errorPasssss.classList.add("errorColor");
+              // val = 0;
+              return false;
+          }
+          if(mobileName.length != 10) {
+            errorPasssss.innerText =
+              "Mobile Number Only 10 Digit";
+              errorPasssss.classList.add("errorColor");
+              // val = 0;          
+              return false;
+          }  
+          if(/\s/g.test(mobileName)) {
+            errorPasssss.innerText ="Not Space used";
+            errorPasssss.classList.add("errorColor");
+              return false;
+          }   
+          if (mobileName) {
+            errorPasssss.innerText = "Mobile Number Successfull"
+            errorPasssss.classList.add("successUserColor");
+            // val = 0;
+            // return true;
+          }     
+        myfunc();             
+      }
+      
+
+
+      let userName = document.getElementById("username");
+      let emailName = document.getElementById("email");
+      let passName = document.getElementById("password");
+      let conpassName = document.getElementById("conpassword");
+      let mobileName = document.getElementById("mobilenumber");
+
+      userName.addEventListener("focus", function () {
+        userName.style.background = "#eb8ed2";
+      });
+      userName.addEventListener("blur", function () {
+        userName.style.background = "white";
+      });
+      emailName.addEventListener("focus", function () {
+        emailName.style.background = "#eb8ed2";
+      });
+      emailName.addEventListener("blur", function () {
+        emailName.style.background = "white";
+      });
+      passName.addEventListener("focus", function () {
+        passName.style.background = "#eb8ed2";
+      });
+      passName.addEventListener("blur", function () {
+        passName.style.background = "white";
+      });
+      conpassName.addEventListener("focus", function () {
+        conpassName.style.background = "#eb8ed2";
+      });
+      conpassName.addEventListener("blur", function () {
+        conpassName.style.background = "white";
+      });
+      mobileName.addEventListener("focus", function () {
+        mobileName.style.background = "#eb8ed2";
+      });
+      mobileName.addEventListener("blur", function () {
+        mobileName.style.background = "white";
+      });
+
+      
+      
+    </script>
+    <script src="js/form.js"></script>
+  </body>
+</html>
