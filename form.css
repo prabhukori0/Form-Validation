@@ -1,6 +1,11 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    border: 2 solid rgba(14, 14, 1, 0.79);
+}
+#container{
+    border: 20px solid yellow ;
+    background-color: rgb(104, 124, 167);
 }
 .form-group{
     text-align: center;
@@ -42,7 +47,6 @@ body{
     font-weight: bold;
 }
 .responsiv{
-    /* padding-left: 440px; */
     align-items: center;
 }
 .btn{
@@ -65,7 +69,10 @@ body{
 
 @media screen and (max-width: 575px) {
     body{
-        width: 70%;
+        width: 100%;
+    }
+    #container{
+        margin-left: 30px;
     }
     .form-group{
         width:100%;
@@ -80,14 +87,14 @@ body{
     }
     .btn{
         width: 100%;
-        margin-left: 50px;
+        margin-left: 0px;
     }
     .form-contant{
         margin-right: 50px;
     }
     h1{
         width: 100%;
-        margin-left: 50px;
-        padding-left: 50px;
+        margin-left: 25px;
+        padding-left: 30px;
     }
-} 
+}
